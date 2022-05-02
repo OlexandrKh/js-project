@@ -1,0 +1,29 @@
+{
+  "name": "my-template",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/OlexandrKh/js-project",
+  "scripts": {
+    "dev": "parcel ./src/*.html",
+    "build": "parcel build ./src/*.html",
+    "prebuild": "rm -rf dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlexandrKh/js-project.git"
+  },
+  "keywords": [],
+  "author": "OlexanderKh",
+  "license": "ISC",
+  "dependencies": {
+    "handlebars": "^4.7.7",
+    "posthtml-doctype": "^1.1.1",
+    "sass": "^1.51.0",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.5.0"
+  }
+}

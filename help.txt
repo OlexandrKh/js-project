@@ -1,0 +1,60 @@
+Команды NPM
+
+Сразу перечислим основные команды и будем последовательно использовать и рассматривать в деталях.
+
+npm init — инициализирует npm и создает файл package.json
+npm install — устанавливает все зависимости перечисленные в package.json
+npm list --depth=0 - выведет в терминале список локально установленных пакетов с номерами их версий, без зависимостей
+npm install [package-name] — установит пакет локально в папку node_modules
+npm uninstall [package-name] — удалит пакет, установленный локально и обновит package.json
+npm start и npm test — запустит скрипт start или test, расположенный в package.json
+npm run [custom-script] — запустит кастомный скрипт, расположенный в package.json
+npm outdated — используется для поиска обновлений, обнаружит совместимые версии программно и выведет список доступных обновлений
+npm update — обновит все пакеты до максимально разрешенной версии
+======================================================================================================
+Добавление модулей в js
+===Первый способ===
+// myModule.js
+const sqrt = Math.sqrt;
+export const square = x => x * x;
+export const diag = (x, y) => sqrt(square(x) + square(y));
+
+// main.js
+import { square, diag } from './path/to/myModule';
+// import * as myModule from './path/to/myModule';
+console.log(square(11)); // 121
+console.log(diag(4, 3)); // 5
+===Второй способ// myModule.js
+const sqrt = Math.sqrt;
+const square = x => x * x;
+const diag = (x, y) => sqrt(square(x) + square(y));
+
+export { square, diag };
+
+// main.js
+import { square, diag } from './path/to/myModule';
+
+console.log(square(11)); // 121
+console.log(diag(4, 3)); // 5
+===Третий способ
+// main.js
+import * as myModule from './path/to/myModule';
+
+console.log(myModule.square(11)); // 121
+console.log(myModule.diag(4, 3)); // 5
+===Default export===
+// myFunc.js
+export default function myFunc () { ... };
+
+// myClass.js
+export default class MyClass { ... };
+
+// main.js
+import myFunc from './path/to/myFunc';
+import MyClass from './path/to/myClass';
+
+myFunc();
+
+const inst = new MyClass();
+======================================================================================================
+
