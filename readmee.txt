@@ -7,3 +7,4 @@ npm install validator
 Создать файл .gitignore и добавить папку node_modules в файл .gitignore
         Запуск скрипта через NODE
 npm start
+npm run <name-script>
